@@ -1,20 +1,18 @@
 {
-  "name": "javascript-lab",
+  "name": "phase-1-array-map-method-lab",
   "version": "1.0.0",
-  "description": "A JavaScript lab",
+  "description": "Lab project for practicing Array.prototype.map() — titleCased tutorial titles",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "mocha --timeout 5000 -R mocha-multi --reporter-options spec=-,json=.results.json"
+    "test": "jest --watchAll=false",
+    "start": "lite-server"
   },
-  "author": "flatironschool",
-  "license": "Included in Repo",
+  "keywords": ["javascript", "map", "lab", "tutorials"],
+  "author": "Sam-Safari",
+  "license": "MIT",
   "devDependencies": {
-    "babel-core": "6.26.3",
-    "babel-preset-env": "1.7.0",
-    "chai": "4.1.2",
-    "jsdom": "9.2.1",
-    "mocha": "5.2.0",
-    "mocha-jsdom": "~1.1.0",
-    "mocha-multi": "1.0.1"
+    "jest": "^29.0.0",
+    "lite-server": "^2.6.1"
   }
 }

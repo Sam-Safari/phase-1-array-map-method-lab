@@ -1,13 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>JavaScript Lab</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Array map() Lab — Title Case Tutorials</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  hello
-  <script type="text/javascript" src="index.js"></script>
+  <main class="container">
+    <header class="hero">
+      <h1>Array.map() Lab — Title Case Tutorials</h1>
+      <p class="lead">Practice using <code>Array.prototype.map()</code> to transform an array of tutorial titles into Title Case.</p>
+    </header>
+
+    <section class="controls">
+      <button id="btn-titlecase" class="btn">Convert to Title Case</button>
+      <button id="btn-reset" class="btn secondary">Reset</button>
+    </section>
+
+    <section class="panel">
+      <h2>Original Tutorials</h2>
+      <ol id="original-list" class="list"></ol>
+    </section>
+
+    <section class="panel">
+      <h2>Title-Cased Tutorials</h2>
+      <ol id="titlecased-list" class="list"></ol>
+    </section>
+
+    <footer class="footer">
+      <p>Author: Samuel Esapar Emanman (Sam-Safari) · Educational lab demo</p>
+    </footer>
+  </main>
+
+  <script src="index.js" type="module"></script>
 </body>
 </html>
