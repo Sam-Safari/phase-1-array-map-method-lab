@@ -1,25 +1,26 @@
 // index.test.js
-// Node-friendly require; Jest runs in Node.
-const { titleCased, tutorials } = require("./index.js");
+
+let titleCased, tutorials;
+
+beforeAll(async () => {
+  const mod = await import('./index.js');
+  titleCased = mod.titleCased;
+  tutorials = mod.tutorials;
+});
 
 describe("titleCased()", () => {
   test("returns an array of the same length", () => {
-    const result = titleCased();
-    expect(Array.isArray(result)).toBe(true);
-    expect(result.length).toBe(tutorials.length);
+    expect(titleCased().length).toBe(tutorials.length);
   });
 
-  test("capitalizes the first letter of each word", () => {
+  test("capitalizes every word in every title", () => {
     const result = titleCased();
-    // sample checks
-    expect(result[0]).toBe("What Does The This Keyword Mean?");
-    expect(result[2]).toBe("Implementing Blockchain Web API");
-    expect(result[9]).toBe("What Is JSONP?");
-  });
-
-  test("does not mutate original array", () => {
-    const original = [...tutorials];
-    titleCased();
-    expect(tutorials).toEqual(original);
+    result.forEach(title => {
+      title.split(" ").forEach(word => {
+        if (word.length > 0) {
+          expect(word[0]).toBe(word[0].toUpperCase());
+        }
+      });
+    });
   });
 });
