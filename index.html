@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Array map() Lab — Title Case Tutorials</title>
   <link rel="stylesheet" href="styles.css" />
+ <!-- Favicon --> 
+  <link rel="icon" href="favicon.ico" />
 </head>
 <body>
   <main class="container">
@@ -14,8 +16,9 @@
     </header>
 
     <section class="controls">
-      <button id="btn-titlecase" class="btn">Convert to Title Case</button>
-      <button id="btn-reset" class="btn secondary">Reset</button>
+      <!-- Accessible buttons -->
+      <button id="btn-titlecase" class="btn" aria-label="Convert tutorials to title case">Convert to Title Case</button>
+      <button id="btn-reset" class="btn secondary" aria-label="Reset tutorials">Reset</button>
     </section>
 
     <section class="panel">
@@ -32,6 +35,11 @@
       <p>Author: Samuel Esapar Emanman (Sam-Safari) · Educational lab demo</p>
     </footer>
   </main>
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <p>Please enable JavaScript to run this lab.</p>
+  </noscript>
 
   <script src="index.js" type="module"></script>
 </body>

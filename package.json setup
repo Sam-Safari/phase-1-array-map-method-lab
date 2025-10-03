@@ -1,11 +1,6 @@
 {
-  "name": "phase-1-array-map-method-lab-v2",
-  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watchAll=false"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
   }
 }

@@ -1,35 +1,23 @@
-# Phase 1 Lab – Using Array.prototype.map()
+# Array.map() Lab — Title Case Tutorials
 
-**Author:** Samuel Esapar Emanman (Sam-Safari)
+## 📌 Overview
+Practice project for using `Array.prototype.map()` in JavaScript.
+Transforms an array of tutorial titles into Title Case.
 
-## Objective
-Practice using JavaScript's `Array.prototype.map()` to transform an array of tutorial titles into Title Case.
+## 🚀 Features
+- Convert tutorial titles into Title Case.
+- Reset to original list.
+- Simple HTML + CSS interface.
+- Includes Jest unit tests.
 
-## Files
-- `index.html` — UI demo
-- `styles.css` — external styles
-- `index.js` — data + `titleCased()` function + DOM wiring
-- `db.json` — data file containing tutorials
-- `index.test.js` — Jest tests
-- `package.json` — dev dependencies and scripts
-- `.gitignore`
-- `LICENSE` — MIT
+## 🛠️ Tech Stack
+- JavaScript (ES Modules)
+- HTML5 + CSS3
+- Jest (for testing)
 
-## Lab Requirements
-- Implement `titleCased()` that:
-  - takes **no arguments**
-  - uses the global `tutorials` array
-  - returns a **new array** of title-cased strings
-- Do not mutate the original `tutorials` array.
-
-## How it works
-1. Split each title string into words.
-2. Map each word to a capitalized form (first char uppercase + rest unchanged).
-3. Join words back together.
-4. The outer `map()` applies the transformation to every title.
-
-## Run locally (terminal)
-1. Clone the repo:
+## ▶️ How to Run
+1. Clone this repo
+2. Install dependencies:
    ```bash
-   git clone git@github.com:Sam-Safari/phase-1-array-map-method-lab.git
-   cd phase-1-array-map-method-lab
+   npm install
+   npm test
