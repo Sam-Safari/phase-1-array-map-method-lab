@@ -1,60 +1,51 @@
-// index.js
-
-// Sample data (tutorial titles)
-export const tutorials = [
-  "what does the this keyword mean?",
-  "what is the CONTEXT of execution?",
-  "what is hoisting?",
-  "what is scope?",
-  "what are closures?",
-  "what are promises?",
-  "what is the event loop?",
-  "what is event bubbling?",
-  "what are arrow functions?",
-  "what is a callback function?"
-];
-
-// Function to convert all tutorial titles into Title Case
-export function titleCased() {
-  return tutorials.map(title => {
-    return title
+// --- Pure Logic ---
+export function titleCased(tutorials) {
+  return tutorials.map(title =>
+    title
       .split(" ")
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  });
+      .join(" ")
+  );
 }
-// --- DOM Integration ---
-const originalList = document.getElementById("original-list");
-const titlecasedList = document.getElementById("titlecased-list");
-const btnTitlecase = document.getElementById("btn-titlecase");
-const btnReset = document.getElementById("btn-reset");
 
-// Render original tutorials
-function renderOriginal() {
-  originalList.innerHTML = "";
-  tutorials.forEach(t => {
+// --- DOM Integration ---
+if (typeof document !== "undefined") {
+  const originalList = document.getElementById("original-list");
+  const titlecasedList = document.getElementById("titlecased-list");
+  const btnTitlecase = document.getElementById("btn-titlecase");
+  const btnReset = document.getElementById("btn-reset");
+
+  const tutorials = [
+    "what does the this keyword mean?",
+    "what is the DOM?",
+    "what is an event listener?",
+    "explain event delegation",
+    "what is a closure?",
+    "what is a promise?",
+    "what are classes?",
+    "what are arrow functions?",
+    "what is the purpose of async/await?",
+    "what is JSON?"
+  ];
+
+  // Populate original list
+  tutorials.forEach(title => {
     const li = document.createElement("li");
-    li.textContent = t;
+    li.textContent = title;
     originalList.appendChild(li);
   });
-}
 
-// Render title-cased tutorials
-function renderTitlecased() {
-  titlecasedList.innerHTML = "";
-  titleCased().forEach(t => {
-    const li = document.createElement("li");
-    li.textContent = t;
-    titlecasedList.appendChild(li);
+  btnTitlecase.addEventListener("click", () => {
+    const converted = titleCased(tutorials);
+    titlecasedList.innerHTML = "";
+    converted.forEach(title => {
+      const li = document.createElement("li");
+      li.textContent = title;
+      titlecasedList.appendChild(li);
+    });
+  });
+
+  btnReset.addEventListener("click", () => {
+    titlecasedList.innerHTML = "";
   });
 }
-
-// Button events
-btnTitlecase?.addEventListener("click", renderTitlecased);
-btnReset?.addEventListener("click", () => {
-  titlecasedList.innerHTML = "";
-  renderOriginal();
-});
-
-// Initial render
-renderOriginal();

@@ -1,26 +1,18 @@
-// index.test.js
-
-let titleCased, tutorials;
-
-beforeAll(async () => {
-  const mod = await import('./index.js');
-  titleCased = mod.titleCased;
-  tutorials = mod.tutorials;
-});
+import { titleCased } from "./index.js";
 
 describe("titleCased()", () => {
+  const tutorials = [
+    "what does the this keyword mean?",
+    "what is the DOM?"
+  ];
+
   test("returns an array of the same length", () => {
-    expect(titleCased().length).toBe(tutorials.length);
+    expect(titleCased(tutorials)).toHaveLength(tutorials.length);
   });
 
   test("capitalizes every word in every title", () => {
-    const result = titleCased();
-    result.forEach(title => {
-      title.split(" ").forEach(word => {
-        if (word.length > 0) {
-          expect(word[0]).toBe(word[0].toUpperCase());
-        }
-      });
-    });
+    const result = titleCased(tutorials);
+    expect(result[0]).toBe("What Does The This Keyword Mean?");
+    expect(result[1]).toBe("What Is The DOM?");
   });
 });
