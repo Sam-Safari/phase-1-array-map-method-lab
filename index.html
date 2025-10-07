@@ -1,46 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Array map() Lab — Title Case Tutorials</title>
-  <link rel="stylesheet" href="styles.css" />
- <!-- Favicon --> 
-  <link rel="icon" href="favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase 1 Array Map Method Lab</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <header class="hero">
-      <h1>Array.map() Lab — Title Case Tutorials</h1>
-      <p class="lead">Practice using <code>Array.prototype.map()</code> to transform an array of tutorial titles into Title Case.</p>
-    </header>
+  <header>
+    <h1>Phase 1 Array Map Method Lab</h1>
+    <p>By Samuel Emanman</p>
+  </header>
 
-    <section class="controls">
-      <!-- Accessible buttons -->
-      <button id="btn-titlecase" class="btn" aria-label="Convert tutorials to title case">Convert to Title Case</button>
-      <button id="btn-reset" class="btn secondary" aria-label="Reset tutorials">Reset</button>
+  <main>
+    <section>
+      <h2>Original Tutorial Titles</h2>
+      <ul id="original-tutorials"></ul>
     </section>
 
-    <section class="panel">
-      <h2>Original Tutorials</h2>
-      <ol id="original-list" class="list"></ol>
+    <section>
+      <h2>Title-Cased Tutorial Titles</h2>
+      <ul id="titlecased-tutorials"></ul>
     </section>
 
-    <section class="panel">
-      <h2>Title-Cased Tutorials</h2>
-      <ol id="titlecased-list" class="list"></ol>
+    <section>
+      <h2>Robots Before Activation</h2>
+      <pre id="original-robots"></pre>
     </section>
 
-    <footer class="footer">
-      <p>Author: Samuel Esapar Emanman (Sam-Safari) · Educational lab demo</p>
-    </footer>
+    <section>
+      <h2>Robots After Activation</h2>
+      <pre id="activated-robots"></pre>
+    </section>
   </main>
 
-  <!-- Noscript fallback -->
-  <noscript>
-    <p>Please enable JavaScript to run this lab.</p>
-  </noscript>
+  <footer>
+    &copy; 2025 Samuel Emanman | Phase 1 Lab
+  </footer>
 
-  <script src="index.js" type="module"></script>
+  <script src="index.js"></script>
 </body>
 </html>
