@@ -1,51 +1,66 @@
-// --- Pure Logic ---
-export function titleCased(tutorials) {
-  return tutorials.map(title =>
-    title
-      .split(" ")
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
-  );
+// Tutorials array
+const tutorials = [
+  "what does the this keyword mean?",
+  "What is the Constructor OO pattern?",
+  "implementing Blockchain Web API",
+  "The Test Driven Development Workflow",
+  "What is NaN and how Can we Check for it",
+  "What is the difference between stopPropagation and preventDefault?",
+  "Immutable State and Pure Functions",
+  "what is the difference between == and ===?",
+  "what is the difference between event capturing and bubbling?",
+  "what is JSONP?",
+];
+
+// Robots array
+const robots = [
+  { name: "Johnny 5", modes: 5, isActivated: false },
+  { name: "C3PO", modes: 3, isActivated: false },
+  { name: "Sonny", modes: 2.5, isActivated: false },
+  { name: "Baymax", modes: 1.5, isActivated: false },
+];
+
+// Function to title-case a string
+function titleCase(str) {
+  return str
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
-// --- DOM Integration ---
-if (typeof document !== "undefined") {
-  const originalList = document.getElementById("original-list");
-  const titlecasedList = document.getElementById("titlecased-list");
-  const btnTitlecase = document.getElementById("btn-titlecase");
-  const btnReset = document.getElementById("btn-reset");
+// Function to generate title-cased tutorials array
+function titleCased() {
+  return tutorials.map(titleCase);
+}
 
-  const tutorials = [
-    "what does the this keyword mean?",
-    "what is the DOM?",
-    "what is an event listener?",
-    "explain event delegation",
-    "what is a closure?",
-    "what is a promise?",
-    "what are classes?",
-    "what are arrow functions?",
-    "what is the purpose of async/await?",
-    "what is JSON?"
-  ];
-
-  // Populate original list
-  tutorials.forEach(title => {
-    const li = document.createElement("li");
-    li.textContent = title;
-    originalList.appendChild(li);
-  });
-
-  btnTitlecase.addEventListener("click", () => {
-    const converted = titleCased(tutorials);
-    titlecasedList.innerHTML = "";
-    converted.forEach(title => {
-      const li = document.createElement("li");
-      li.textContent = title;
-      titlecasedList.appendChild(li);
+// Function to activate robots
+function activateRobots() {
+  return robots.map(robot => {
+    return Object.assign({}, robot, {
+      modes: robot.modes * 2,
+      isActivated: true,
     });
   });
-
-  btnReset.addEventListener("click", () => {
-    titlecasedList.innerHTML = "";
-  });
 }
+
+// Display original tutorials
+const originalTutorialsList = document.getElementById("original-tutorials");
+tutorials.forEach(t => {
+  const li = document.createElement("li");
+  li.textContent = t;
+  originalTutorialsList.appendChild(li);
+});
+
+// Display title-cased tutorials
+const titleCasedList = document.getElementById("titlecased-tutorials");
+titleCased().forEach(t => {
+  const li = document.createElement("li");
+  li.textContent = t;
+  titleCasedList.appendChild(li);
+});
+
+// Display original robots
+document.getElementById("original-robots").textContent = JSON.stringify(robots, null, 2);
+
+// Display activated robots
+document.getElementById("activated-robots").textContent = JSON.stringify(activateRobots(), null, 2);
