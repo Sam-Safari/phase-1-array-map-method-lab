@@ -1,1 +1,13 @@
+{
+  "tutorials": [
+    { "id": 1, "title": "what does the this keyword mean?" },
+    { "id": 2, "title": "What is the Constructor OO pattern?" },
+    { "id": 3, "title": "implementing Blockchain Web API" },
+    { "id": 4, "title": "The Test Driven Development Workflow" }
+  ],
+  "robots": [
+    { "id": 1, "name": "Johnny 5", "modes": 5, "isActivated": false },
+    { "id": 2, "name": "C3PO", "modes": 3, "isActivated": false }
+  ]
+}
 
