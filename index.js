@@ -1,6 +1,5 @@
-// --- Lab Logic ---
+// --- Lab Data ---
 
-// Tutorials array
 const tutorials = [
   "what does the this keyword mean?",
   "What is the Constructor OO pattern?",
@@ -14,7 +13,6 @@ const tutorials = [
   "what is JSONP?",
 ];
 
-// Robots array
 const robots = [
   { name: "Johnny 5", modes: 5, isActivated: false },
   { name: "C3PO", modes: 3, isActivated: false },
@@ -22,7 +20,8 @@ const robots = [
   { name: "Baymax", modes: 1.5, isActivated: false },
 ];
 
-// Function to title-case a string
+// --- Functions ---
+
 function titleCase(str) {
   return str
     .split(" ")
@@ -30,12 +29,10 @@ function titleCase(str) {
     .join(" ");
 }
 
-// Function to return title-cased tutorials
 function titleCased() {
   return tutorials.map(titleCase);
 }
 
-// Function to activate robots
 function activateRobots() {
   return robots.map(robot => {
     return Object.assign({}, robot, {
@@ -45,7 +42,7 @@ function activateRobots() {
   });
 }
 
-// Export functions for testing
+// --- Exports for Jest ---
 if (typeof module !== "undefined") {
   module.exports = {
     tutorials,
@@ -56,18 +53,22 @@ if (typeof module !== "undefined") {
   };
 }
 
-// --- DOM Manipulation (only run in browser) ---
+// --- DOM Manipulation (browser only) ---
 if (typeof document !== "undefined") {
-  // Display original tutorials
-  const originalTutorialsList = document.getElementById("original-tutorials");
+  const originalList = document.getElementById("original-tutorials");
   tutorials.forEach(t => {
     const li = document.createElement("li");
     li.textContent = t;
-    originalTutorialsList.appendChild(li);
+    originalList.appendChild(li);
   });
 
-  // Display title-cased tutorials
-  const titleCasedList = document.getElementById("titlecased-tutorials");
+  const titlecasedList = document.getElementById("titlecased-tutorials");
   titleCased().forEach(t => {
     const li = document.createElement("li");
     li.textContent = t;
+    titlecasedList.appendChild(li);
+  });
+
+  document.getElementById("original-robots").textContent = JSON.stringify(robots, null, 2);
+  document.getElementById("activated-robots").textContent = JSON.stringify(activateRobots(), null, 2);
+}
