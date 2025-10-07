@@ -1,32 +1,16 @@
 # Phase 1 Array Map Method Lab
 
-This is my lab for arrays.
+## Learning Goals
+- Review how the `map()` method works
+- Demonstrate `map()` with arrays
+- Demonstrate `map()` with complex data structures
 
 ## Instructions
+1. Install dependencies: `npm install`
+2. Run tests: `npm test`
+3. Open `index.html` in browser to view results
 
-- Complete all exercises
-- Submit the files
-
-## Setup
-
-npm install
-
-```javascript
-console.log("Hello World");
-# Phase 1: Array Map Method Lab
-
-**Author:** Samuel Emanman  
-**Date:** 2025-10-07  
-
-## Overview
-This lab demonstrates the use of the JavaScript `map()` method with arrays and complex data structures.  
-
-## Learning Goals
-- Understand how the `map()` method works  
-- Transform arrays of strings and objects  
-- Preserve immutability with `map()`  
-
-## Setup
-1. Install dependencies:
-```bash
-npm install
+## Lab Tasks
+- Title-case tutorial titles using `map()`
+- Activate robots by doubling modes and setting `isActivated` to `true`
+- Use functions that can be tested independently of the DOM
