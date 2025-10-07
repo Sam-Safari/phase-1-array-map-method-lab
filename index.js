@@ -1,3 +1,5 @@
+// --- Lab Logic ---
+
 // Tutorials array
 const tutorials = [
   "what does the this keyword mean?",
@@ -28,7 +30,7 @@ function titleCase(str) {
     .join(" ");
 }
 
-// Function to generate title-cased tutorials array
+// Function to return title-cased tutorials
 function titleCased() {
   return tutorials.map(titleCase);
 }
@@ -43,24 +45,29 @@ function activateRobots() {
   });
 }
 
-// Display original tutorials
-const originalTutorialsList = document.getElementById("original-tutorials");
-tutorials.forEach(t => {
-  const li = document.createElement("li");
-  li.textContent = t;
-  originalTutorialsList.appendChild(li);
-});
+// Export functions for testing
+if (typeof module !== "undefined") {
+  module.exports = {
+    tutorials,
+    robots,
+    titleCase,
+    titleCased,
+    activateRobots,
+  };
+}
 
-// Display title-cased tutorials
-const titleCasedList = document.getElementById("titlecased-tutorials");
-titleCased().forEach(t => {
-  const li = document.createElement("li");
-  li.textContent = t;
-  titleCasedList.appendChild(li);
-});
+// --- DOM Manipulation (only run in browser) ---
+if (typeof document !== "undefined") {
+  // Display original tutorials
+  const originalTutorialsList = document.getElementById("original-tutorials");
+  tutorials.forEach(t => {
+    const li = document.createElement("li");
+    li.textContent = t;
+    originalTutorialsList.appendChild(li);
+  });
 
-// Display original robots
-document.getElementById("original-robots").textContent = JSON.stringify(robots, null, 2);
-
-// Display activated robots
-document.getElementById("activated-robots").textContent = JSON.stringify(activateRobots(), null, 2);
+  // Display title-cased tutorials
+  const titleCasedList = document.getElementById("titlecased-tutorials");
+  titleCased().forEach(t => {
+    const li = document.createElement("li");
+    li.textContent = t;
